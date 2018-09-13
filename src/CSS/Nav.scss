@@ -1,0 +1,19 @@
+.nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+  .links {
+    text-align: right;
+    padding: 1rem;
+    align-self: center;
+
+    a {
+      padding: 1rem;
+    }
+  }
+}

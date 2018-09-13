@@ -1,0 +1,97 @@
+
+.Home {
+  .jumbo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    .menu {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      margin: 5rem;
+
+      button, .menuBtn {
+        font-size: 2rem;
+        padding: .5rem;
+        margin: .2rem;
+        background-color: black;
+        color: white;
+        font-family: 'Oswald';
+        border: 1px solid lightBlue;
+      }
+
+      button:hover, .menuBtn:hover {
+        border: 1px solid white;
+
+        .mapIcon {
+            animation: rotate .5s linear;
+        }
+        .customIcon {
+          animation: spin .5s linear;
+        }
+
+      }
+
+      #roomMode {
+        grid-column: 1 / span 2;
+        background-color: rgb(0, 139, 163);
+        color: white;
+        text-align: center;
+
+        h1 {
+          grid-column: span 2;
+        }
+      }
+
+      .menuBtn {
+        font-size: 1rem;
+        align-content: center;
+        display: grid;
+        grid-template-columns: auto auto;
+        color: rgb(218, 188, 62);
+        position: relative;
+        overflow: hidden;
+
+        img {
+          margin-top: auto;
+          margin-bottom: auto;
+          width: 3rem;
+          margin-left: 1rem;
+        }
+      }
+
+      .menuBtn::before {
+        content: '';
+        background-color: rgba(255, 255, 255, 0.3);
+        position: absolute;
+        transform: skewX(-40deg);
+        left: -100%;
+        width: 2rem;
+        height: 100%;
+        transition: 0s;
+      }
+
+      .menuBtn:hover::before {
+        left: 200%;
+        transition: all .8s linear;
+      }
+
+      .support {
+        grid-column: span 2;
+      }
+    }
+
+    .logo {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      height: 80vh;
+      grid-column: 2;
+      grid-row: 1 / span 3;
+    }
+  }
+}
+
+@keyframes beat { 50% {transform: scale(1.5);}  100% {transform: scale(1);} }
+@keyframes rotate { 100% { transform:rotate3d(0, 1, 0, 360deg); } }
+@keyframes spin { 100% { transform:rotate(180deg); } }
